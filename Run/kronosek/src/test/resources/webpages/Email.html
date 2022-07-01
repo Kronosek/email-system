@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kronosek</title>
+</head>
+<body>
+    <h1>Kronosek - Email</h1>
+    <h5>To:</h5><input id="to" type="text"></input>
+    <h5>From:</h5><input id="from" type="from"></input>
+    <h5>Subject:</h5><input id="subject" type="subject">
+    <h5>Message:</h5><textarea id="message" rows="6" cols="20"></textarea>
+    <h5>Select Date:</h5>
+    <select id="month">
+        <option></option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+    </select>
+    <select id="day">
+        <option></option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>17</option>
+        <option>18</option>
+        <option>19</option>
+        <option>17</option>
+        <option>18</option>
+        <option>19</option>
+        <option>20</option>
+        <option>23</option>
+        <option>24</option>
+        <option>25</option>
+        <option>26</option>
+        <option>27</option>
+        <option>28</option>
+        <option>29</option>
+        <option>30</option>
+        <option>31</option>
+    </select>
+    <select id="year">
+        <option></option>
+        <option>2022</option>
+        <option>2023</option>
+        <option>2023</option>
+        <option>2024</option>
+        <option>2025</option>
+        <option>2026</option>
+        <option>2027</option>
+        <option>2028</option>
+        <option>2029</option>
+        <option>2030</option>
+        <option>2031</option>
+        <option>2032</option>
+        <option>2033</option>
+        <option>2034</option>
+        <option>2035</option>
+        <option>2036</option>
+        <option>2037</option>
+        <option>2038</option>
+        <option>2039</option>
+        <option>2040</option>
+        <option>2041</option>
+        <option>2042</option>
+        <option>2043</option>
+        <option>2044</option>
+        <option>2045</option>
+        <option>2046</option>
+        <option>2047</option>
+        <option>2048</option>
+        <option>2049</option>
+        <option>2050</option>
+    </select>
+    <button id="send" onclick="send()" value="send">send</button>
+</body>
+<script>
+ 
+    document.addEventListener("click", date);
+
+    let obj = {
+        to: "da@te.me",
+        from: "awesomeperk17@gmail.com",
+        subject: "Hello",
+        message: "Message in a bottle."
+    }
+
+    console.log(obj);
+
+    function fetch(){
+
+        let to      = document.getElementById("to").value;
+        let from    = document.getElementById("from").value;
+        let subject = document.getElementById("subject").value;
+        let message = document.getElementById("message").value;
+
+        let email = {
+            to: to,
+            from: from,
+            subject: subject,
+            message: message
+            
+        }
+
+        if((to != "") && (from != "") && (subject != "") && (message != "")){
+            console.log("To:    \t\t" + to);
+            console.log("From:  \t\t" + from);
+            console.log("Subject: \t" + subject);
+            console.log("Message: \t" + message);
+        }
+
+        console.log(email);
+
+    }
+
+    let month;
+    let day;
+    let year;
+
+    function date (){
+
+        month   = document.getElementById("month").value;
+        day     = document.getElementById("day").value;
+        year    = document.getElementById("year").value;
+
+        if((month != "") && (day != "") && (year != "")){
+            console.log("Month: \t" + month);
+            console.log("Day:   \t" + day);
+            console.log("Year:  \t" + year);
+        }
+
+    }
+
+    function send (){
+        fetch();
+        alert(`SENT: Your message will be received on ${month} ${day}, ${year}`);
+    }
+        
+</script>
+</html>

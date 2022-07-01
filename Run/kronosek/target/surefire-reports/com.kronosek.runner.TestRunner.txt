@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.kronosek.runner.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.035 s <<< FAILURE! - in com.kronosek.runner.TestRunner
+initializationError(com.kronosek.runner.TestRunner)  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NoClassDefFoundError: LEmail;
+Caused by: java.lang.ClassNotFoundException: Email
+

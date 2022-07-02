@@ -1,7 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.kronosek.runner.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.436 s <<< FAILURE! - in com.kronosek.runner.TestRunner
-I want to send an email to my girlfriend into the future(This is an email system that delays when emails are sent)  Time elapsed: 0.422 s  <<< ERROR!
-java.lang.NullPointerException
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.318 s - in com.kronosek.runner.TestRunner

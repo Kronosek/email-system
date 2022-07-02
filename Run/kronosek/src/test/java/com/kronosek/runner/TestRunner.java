@@ -32,7 +32,7 @@ public class TestRunner {
 
     @AfterClass // this makes the method execute after all the steps
     public static void teardown(){
-       driver.quit();
+       //driver.quit();
     }
     
 }

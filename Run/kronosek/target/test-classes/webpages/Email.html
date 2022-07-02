@@ -8,10 +8,9 @@
     <h5>To:</h5><input id="to" type="text"></input>
     <h5>From:</h5><input id="from" type="from"></input>
     <h5>Subject:</h5><input id="subject" type="subject">
-    <h5>Message:</h5><textarea id="message" rows="6" cols="20"></textarea>
+    <h5>Message:</h5><textarea id="message" rows="6" cols="100"></textarea>
     <h5>Select Date:</h5>
-    <select id="month">
-        <option></option>
+    <select id="month" name="month">
         <option value="January">January</option>
         <option value="February">February</option>
         <option value="March">March</option>
@@ -25,81 +24,37 @@
         <option value="November">November</option>
         <option value="December">December</option>
     </select>
-    <select id="day">
-        <option></option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-        <option>10</option>
-        <option>11</option>
-        <option>12</option>
-        <option>13</option>
-        <option>14</option>
-        <option>15</option>
-        <option>16</option>
-        <option>17</option>
-        <option>18</option>
-        <option>19</option>
-        <option>17</option>
-        <option>18</option>
-        <option>19</option>
-        <option>20</option>
-        <option>23</option>
-        <option>24</option>
-        <option>25</option>
-        <option>26</option>
-        <option>27</option>
-        <option>28</option>
-        <option>29</option>
-        <option>30</option>
-        <option>31</option>
-    </select>
-    <select id="year">
-        <option></option>
-        <option>2022</option>
-        <option>2023</option>
-        <option>2023</option>
-        <option>2024</option>
-        <option>2025</option>
-        <option>2026</option>
-        <option>2027</option>
-        <option>2028</option>
-        <option>2029</option>
-        <option>2030</option>
-        <option>2031</option>
-        <option>2032</option>
-        <option>2033</option>
-        <option>2034</option>
-        <option>2035</option>
-        <option>2036</option>
-        <option>2037</option>
-        <option>2038</option>
-        <option>2039</option>
-        <option>2040</option>
-        <option>2041</option>
-        <option>2042</option>
-        <option>2043</option>
-        <option>2044</option>
-        <option>2045</option>
-        <option>2046</option>
-        <option>2047</option>
-        <option>2048</option>
-        <option>2049</option>
-        <option>2050</option>
-    </select>
+    <select id="day" name="day"></select>
+    <select id="year" name="year"></select>
     <button id="send" onclick="send()" value="send">send</button>
 </body>
 <script>
- 
+    
+    
+    (function() { // don't leak
+        var day = document.getElementById('day'), // get the select
+        data = document.createDocumentFragment(); // create a document fragment to hold the options while we create them
+        for (var i = 1; i <= 31; i++) { // loop, i like 42.
+            var option = document.createElement('option'); // create the option element
+            option.value = i; // set the value property
+            option.appendChild(document.createTextNode(i)); // set the textContent in a safe way.
+            data.appendChild(option); // append the option to the document fragment
+        }
+        day.appendChild(data); // append the document fragment to the DOM. this is the better way rather than setting innerHTML a bunch of times (or even once with a long string)
+    }());
+
+    (function() { // don't leak
+        var year = document.getElementById('year'), // get the select
+        data = document.createDocumentFragment(); // create a document fragment to hold the options while we create them
+        for (var i = 2023; i <= 2072; i++) { // loop, i like 42.
+            var option = document.createElement('option'); // create the option element
+            option.value = i; // set the value property
+            option.appendChild(document.createTextNode(i)); // set the textContent in a safe way.
+            data.appendChild(option); // append the option to the document fragment
+        }
+        year.appendChild(data); // append the document fragment to the DOM. this is the better way rather than setting innerHTML a bunch of times (or even once with a long string)
+    }());
+
     document.addEventListener("click", date);
 
     let obj = {

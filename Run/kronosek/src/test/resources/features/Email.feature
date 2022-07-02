@@ -5,8 +5,8 @@ Feature: This is an email system that delays when emails are sent
         When    i enter the email address i am sending from
         When    i enter the subject
         When    i compose a message
-        When    i select the month
-        When    i select the day 
-        When    i select the year
+       When    i select the month
+       When    i select the day 
+       When    i select the year
         When    i click on send
         Then    i click ok to confirm

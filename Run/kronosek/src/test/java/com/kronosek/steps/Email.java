@@ -45,37 +45,47 @@ public class Email {
     public void i_compose_a_message () {
         By messageBody = By.id("message");
         WebElement message = TestRunner.driver.findElement(messageBody);
-        message.sendKeys("Message in a bottle.");
+
+        int i = 0;
+        while (i<=150){
+            int binary = (int)(Math.random() * 2) + 0;
+            message.sendKeys(Integer.toString(binary));
+            i++;
+        }
+
     }   
     
     @When("i select the month")
-    public void i_select_the_month() {
-        WebElement selectElement = driver.findElement(By.id("month"));
-        Select option = new Select(selectElement);
-        option.selectByVisibleText("February");
-    
+    public void i_select_the_month(){
+        By selectElementBy = By.id("month");
+        WebElement month = TestRunner.driver.findElement(selectElementBy);
+        Select m = new Select(month);
+        m.selectByIndex(3);
     }
-    
+
+
     @When("i select the day")
-    public void i_select_the_day() {
-        WebElement selectElement = driver.findElement(By.id("day"));
-        Select option = new Select(selectElement);
-        option.selectByVisibleText("14");
-    
+    public void i_select_the_day(){
+        By selectElementBy = By.id("day");
+        WebElement day = TestRunner.driver.findElement(selectElementBy);
+        Select d = new Select(day);
+        d.selectByIndex(0);
     } 
     
     @When("i select the year")
-    public void i_select_the_year() {
-        WebElement selectElement = driver.findElement(By.id("year"));
-        Select option = new Select(selectElement);
-        option.selectByVisibleText("2038");
+    public void i_select_the_year(){
+        By selectElementBy = By.id("year");
+        WebElement year = TestRunner.driver.findElement(selectElementBy);
+        Select y = new Select(year);
+        y.selectByIndex(20);
+        
     }
 
     @When("i click on send")
     public void i_click_on_send () {    
-        By sendButton = By.id("send");
-        WebElement button = TestRunner.driver.findElement(sendButton);
-        button.click();
+        By selectElementBy = By.id("send");
+        WebElement send = TestRunner.driver.findElement(selectElementBy);
+        send.click();
     }
 
     @Then("i click ok to confirm")

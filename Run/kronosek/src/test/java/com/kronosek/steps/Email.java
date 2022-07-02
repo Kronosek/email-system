@@ -21,7 +21,7 @@ public class Email {
     }
 
     @When("i enter the email address i am sending to")
-    public void I_enter_the_email_address_i_am_sending_to () {
+    public void i_enter_the_email_address_i_am_sending_to () {
         By emailTo = By.id("to");
         WebElement to = TestRunner.driver.findElement(emailTo);
         to.sendKeys("d@te.me");

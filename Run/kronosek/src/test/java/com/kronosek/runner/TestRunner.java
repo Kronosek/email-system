@@ -20,9 +20,6 @@ public class TestRunner {
     public static Email email;
     public static WebDriverWait wait;
 
-    /**
-     * 
-     */
     @BeforeClass // this makes the method execute before all the steps
     public static void setup(){
         // make sure to set the value for the key as the full relative path to the chromedriver.exe
@@ -35,7 +32,7 @@ public class TestRunner {
 
     @AfterClass // this makes the method execute after all the steps
     public static void teardown(){
-       //driver.quit();
+       driver.quit();
     }
     
 }

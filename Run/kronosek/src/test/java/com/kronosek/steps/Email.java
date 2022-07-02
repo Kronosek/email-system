@@ -20,15 +20,15 @@ public class Email {
         TestRunner.driver.get("C:/Users/18623/Desktop/Kronosek/email-system/Run/kronosek/src/test/resources/webpages/Email.html");
     }
 
-    @When("i enter the email address I am sending to")
-    public void I_enter_the_email_address_I_am_sending_to () {
+    @When("i enter the email address i am sending to")
+    public void I_enter_the_email_address_i_am_sending_to () {
         By emailTo = By.id("to");
         WebElement to = TestRunner.driver.findElement(emailTo);
         to.sendKeys("d@te.me");
     }
 
-    @When("i enter the email address I am sending from")
-    public void i_enter_the_email_address_I_am_sending_from() {
+    @When("i enter the email address i am sending from")
+    public void i_enter_the_email_address_i_am_sending_from() {
         By emailFrom = By.id("from");
         WebElement from = TestRunner.driver.findElement(emailFrom);
         from.sendKeys("awesomeperk17@gmail.com");
@@ -68,7 +68,7 @@ public class Email {
     public void i_select_the_year() {
         WebElement selectElement = driver.findElement(By.id("year"));
         Select option = new Select(selectElement);
-        option.selectByValue("2038");
+        option.selectByVisibleText("2038");
     }
 
     @When("i click on send")

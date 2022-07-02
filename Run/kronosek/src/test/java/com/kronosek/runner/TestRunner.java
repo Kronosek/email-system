@@ -3,7 +3,9 @@ package com.kronosek.runner;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -33,6 +35,13 @@ public class TestRunner {
     @AfterClass // this makes the method execute after all the steps
     public static void teardown(){
        //driver.quit();
+    }
+
+    public static void click() {
+    }
+
+    public static WebElement findElement(By id) {
+        return null;
     }
     
 }

@@ -40,6 +40,12 @@
       <artifactId>selenium-java</artifactId>
       <version>3.141.59</version>
     </dependency>
+  
+    <dependency>
+      <groupId>com.github.jakimli.pandaria</groupId>
+      <artifactId>pandaria-core</artifactId>
+      <version>0.2.1</version>
+    </dependency>
   </dependencies>
 
   <build>

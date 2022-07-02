@@ -47,7 +47,7 @@ public class Email {
         WebElement message = TestRunner.driver.findElement(messageBody);
 
         int i = 0;
-        while (i<=150){
+        while (i<=101){
             int binary = (int)(Math.random() * 2) + 0;
             message.sendKeys(Integer.toString(binary));
             i++;
@@ -77,20 +77,18 @@ public class Email {
         By selectElementBy = By.id("year");
         WebElement year = TestRunner.driver.findElement(selectElementBy);
         Select y = new Select(year);
-        y.selectByIndex(20);
+        y.selectByValue("2072");
         
     }
 
-    @When("i click on send")
-    public void i_click_on_send () {    
+    @Then ("i click on send and ok on the alert box")
+    public void i_click_on_send_and_ok_the_alert_box () {    
         By selectElementBy = By.id("send");
         WebElement send = TestRunner.driver.findElement(selectElementBy);
         send.click();
+        TestRunner.driver.switchTo().alert().accept();
     }
 
-    @Then("i click ok to confirm")
-    public void i_click_ok_to_confirm() {
-        System.out.println("Works!");
-    }
-    
 }
+    
+
